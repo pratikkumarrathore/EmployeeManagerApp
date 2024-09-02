@@ -1,0 +1,22 @@
+<template>
+   <div class="dashboard slds-p-top_large">
+       <h1 class="slds-text-align_center">Dashboard</h1>
+
+       <div class="box slds-grid slds-wrap slds-grid_align-center">
+        
+           <div class="icons slds-col slds-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12" onclick={handleClick} data-id="1">
+               <img src={attendanceImg} />
+               <p><b>Attendance</b></p>
+           </div>
+           <div class="icons slds-col slds-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12" onclick={handleClick} data-id="2">
+               <img src={timesheetImg} />
+               <p><b>Timesheet</b></p>
+           </div>
+           <div class="icons slds-col slds-size_12-of-12 slds-medium-size_4-of-12 slds-large-size_4-of-12" onclick={handleClick} data-id="3">
+               <img src={leaveImg} />
+               <p><b>Leaves</b></p>
+           </div>
+
+       </div>
+   </div>
+</template>

@@ -1,0 +1,87 @@
+/* Base styles for the table */
+.slds-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+
+/* Styles for screens wider than 600px */
+@media screen and (min-width: 801px) {
+    .slds-table {
+        display: table;
+    }
+    
+    .slds-table thead {
+        display: table-header-group;
+    }
+    
+    .slds-table tbody {
+        display: table-row-group;
+    }
+    
+    .slds-table th, .slds-table td {
+        display: table-cell;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .slds-table th {
+        background-color: #f4f6f9;
+        text-align: left;
+    }
+  }
+  
+  /* Styles for screens 600px or smaller */
+  @media screen and (max-width: 800px) {
+    .slds-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .slds-table thead {
+        display: none;
+        font-size: 10px;
+    }
+    
+    .slds-table tbody {
+        display: block;
+    }
+    
+    .slds-table tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .slds-table td {
+        display: block;
+        text-align: right;
+        padding: 10px;
+        position: relative;
+        border-bottom: 1px solid #ddd;
+        font-size: 10px;
+    }
+    
+    .slds-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+        white-space: nowrap;
+    }
+    
+    .slds-table td {
+        padding-left: 50%;
+    }
+  
+    /* Hide elements with class .hideSmallScreen on small screens */
+    .hideSmallScreen {
+      display: none;
+    }
+  }
+  

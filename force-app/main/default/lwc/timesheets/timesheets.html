@@ -1,0 +1,100 @@
+<template>
+    <div class="header slds-grid slds-gutters">
+        <!-- BUTTONS -->
+        <lightning-button-group class="slds-col">
+            <lightning-button label="Create" onclick={showModal}></lightning-button>
+            <lightning-button label="Import"></lightning-button>
+        </lightning-button-group>
+        <div class="slds-col slds-text-align_right">
+            <p><b>Total Hours : </b>{totalHours}</p>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Create Timesheet Modal -->
+    <template if:true={isModalOpen}>
+        <div class="createModal">
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeModal}>
+                        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+                    <div class="slds-modal__header">
+                        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate" tabindex="-1">Create New Timesheet</h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                        <!-- MODAL BODY -->
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-input type="date" label="Date" value={timesheetDate} onchange={handleInputChange} data-id="timesheetDate"></lightning-input>
+                            <lightning-input type="number" label="Time (Hours)" value={timesheetHours} onchange={handleInputChange} data-id="timesheetHours"></lightning-input>
+                            <lightning-input type="text" label="Project" value={timesheetProject} onchange={handleInputChange} data-id="timesheetProject"></lightning-input>
+                            <lightning-input type="text" label="Task" value={timesheetTask} onchange={handleInputChange} data-id="timesheetTask"></lightning-input>
+                            <lightning-textarea name="Description" label="Description" value={timesheetDescription} onchange={handleInputChange} data-id="timesheetDescription"></lightning-textarea>
+                        </div>
+                    
+                    </div>
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={saveTimesheet}>Save</button>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </div>
+    </template>
+
+    <!-- Timesheet Data Table -->
+    <template if:true={timesheets.length}>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Date">Date</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Hours">Hours</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Project">Project</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Task">Task</div>
+                    </th>
+                    <template if:true={showDes}>
+                        <th scope="col">
+                            <div class="slds-truncate " title="Description">Description</div>
+                        </th>
+                    </template>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={timesheets} for:item="timesheet">
+                    <tr key={timesheet.id}>
+                        <td data-label="Date">
+                            <div class="slds-truncate" title={timesheet.date}>{timesheet.Date__c}</div>
+                        </td>
+                        <td data-label="Hours">
+                            <div class="slds-truncate" title={timesheet.hours}>{timesheet.Hours__c}</div>
+                        </td>
+                        <td data-label="Project">
+                            <div class="slds-truncate" title={timesheet.project}>{timesheet.Project__c}</div>
+                        </td>
+                        <td data-label="Task">
+                            <div class="slds-truncate" title={timesheet.task}>{timesheet.Task__c}</div>
+                        </td>
+                        <template if:true={showDes}>
+                            <td data-label="Description">
+                                <div class="slds-truncate" title={timesheet.description}>{timesheet.Description__c}</div>
+                            </td>
+                        </template>
+                        
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <div class="container slds-align_absolute-center slds-grid slds-grid_vertical">
+            <div class={buttonClass} onclick={handleClick}>
+                <!-- Toggle between login and logout image with animation -->
+                <img class="logs" src={currentImage} alt="Login/Logout">
+                <p class="logText"><b>{currentText}</b></p>
+            </div>
+            <!-- Display current time -->
+            <div class="currentTime slds-col">
+                <p><b>Current Time: {currentTime}</b></p>
+            </div>            
+
+            <div class="currentTime slds-col">
+                <p><b><br/>LogIn Time: {logInTime}</b></p>
+                <p><b>LogOut Time: {logOutTime}</b></p>
+            </div>  
+        </div>
+    </lightning-card>
+</template>

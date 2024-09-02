@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="User Profile" icon-name="standard:user">
+        <div class="slds-m-around_medium">
+            
+            <!-- Profile Picture Section -->
+            <div class="container">
+                <template if:true={hasProfileImage}>
+                    <img src={profileImageUrl} alt="Profile Picture" class="profile-pic"/>
+                </template>
+                <lightning-file-upload
+                    label="Upload Profile Picture"
+                    name="fileUploader"
+                    accept={acceptedFormats}
+                    record-id={myRecordId}
+                    onuploadfinished={handleUploadFinished}
+                    multiple=false>
+                </lightning-file-upload> 
+            </div>
+            
+            <!-- User Details Section -->
+            <table title="User Details" class="profileTable">
+            <tr>
+                <th>User Details<br/></th>
+            </tr>
+               <tr>
+                <th>Name: </th>
+                <td>{userName}</td>
+               </tr>
+               <tr>
+                <th>User Id: </th>
+                <td>{userId}</td>
+               </tr>
+               <tr>
+                <th>Email:  </th>
+                <td>{userEmail}</td>
+               </tr>   
+               <tr>
+                <th>Designation: </th>
+                <td>{userDes}</td>
+               </tr>
+
+            </table>
+
+
+        </div>
+    </lightning-card>
+</template>

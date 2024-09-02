@@ -1,0 +1,53 @@
+.loginButton {
+    border: 2px solid black;
+    padding: 40px;
+    margin: 50px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+.loginButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.loginButton.logged-in {
+    background-color: red;
+}
+
+.loginButton.logged-out {
+    background-color: green;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.logs {
+    width: 80px;
+    height: 80px;
+    animation: scaleIn 0.5s ease;
+}
+
+.currentTime {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.container .logText{
+    color: aliceblue;
+    padding-top: 5px;
+    
+
+}

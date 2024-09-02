@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.calendar-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 350px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.nav-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.nav-button:hover {
+    background-color: #2980b9;
+}
+
+.monthAndYear {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 14.28%; /* For 7 columns */
+}
+
+.calendar-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-table td {
+    cursor: pointer;
+}
+
+.calendar-table td:hover {
+    background-color: #ecf0f1;
+}
+
+.calendar-table .current-date {
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+}
+
+.calendar-table td:empty {
+    cursor: default;
+    background-color: transparent;
+}

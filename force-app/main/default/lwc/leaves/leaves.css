@@ -1,0 +1,50 @@
+.main{
+    margin-top: 5rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: rgb(63, 63, 63);
+    text-decoration: underline;
+    padding-bottom: 2rem;
+}
+
+.icons {
+    justify-content: space-around;
+    padding: 10px;
+    display: inline-block;
+  
+}
+
+
+
+
+@media screen and (min-width: 480px) {
+    .slds-card{
+        max-width: 60%;
+    
+    }
+   
+}
+
+
+
+/* CALENDER */
+
+.leave-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.leave-info {
+    width: 50%;
+}
+
+.calendar-section {
+    width: 50%;
+}
+
+.slds-card .calender{
+    width: 100%;
+}

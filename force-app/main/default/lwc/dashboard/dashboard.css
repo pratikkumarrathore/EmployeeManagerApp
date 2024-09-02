@@ -1,0 +1,23 @@
+h1 {
+    font-size: 1.5rem;
+    color: rgb(63, 63, 63);
+    text-decoration: underline;
+    padding-bottom: 2rem;
+}
+
+.icons {
+    justify-content: center;
+    text-align: center;
+    cursor:pointer;
+  
+}
+
+.icons img {
+    padding: 3px; 
+    border-width: 1px;
+    border-color: black;
+    border-radius: 3px;
+    border-style: solid;
+    max-width: 100%; 
+    display: inline-block;
+}
